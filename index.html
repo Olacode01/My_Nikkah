@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Azeezat & Abdulwariz Nikkah Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="banner-header">
+    <div class="header-content"> 
+      <h1>Azeezat & Abdulwariz</h1>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="date">With the blessings of Allah (SWT),we invite you to our Nikah ceremony!. </p>
+    <p class="date">Saturday, 7th February 2026 | 09:00 AM</p>
+    <div id="countdown"></div> <br>
+    <a href="https://maps.app.goo.gl/nN1StdEzS6BQ8B2FA" class="btn"> Take me to the Venue</a>  
+  </section>
+
+  <section class="story">
+    <h2>Our Love Story</h2>
+     <h3> From Friends to Soulmates </h3>
+    <h3> Two Hearts, One Qiblah </h3>
+    <h3> #ZeeAndTee — Anchored in Love, Guided by Faith </h3>
+   <p>“Our forever started the day we became friends… and it only grows stronger with every sujood, smile, and shared salaam.”</p>
+  </section>
+
+  <section class="gallery">
+    <h2>We said Bismillah. Now come join us!❤️ </h2>
+    <div class="photos-row">
+      <img src="https://github.com/Olacode01/nikah-rsvp-site/raw/master/images/zee_Tee.jpg" alt="Couple 3" />
+    </div>
+  </section>
+
+  <section id="rsvp" class="rsvp">   
+    <h2>RSVP & Wishes!..  </h2>
+
+    <form id="rsvpForm">
+      <div class="form-group">
+        <label for="name" class="form-label">Your Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="E.g., Azeezat Abdulwariz" required />
+      </div>
+    
+      <div class="form-group">
+        <label for="attendance" class="form-label">Will you attend?</label>
+        <select id="attendance" name="attendance" required>
+          <option value="" disabled selected>Choose one...</option>
+          <option value="Yes">✅ Yes, In Sha Allah!</option>
+          <option value="No">❌ No, unfortunately</option>
+        </select>
+      </div>
+    
+      <div class="form-group">
+        <label for="state" class="form-label">Where will you be coming from?</label>
+        <select id="state" name="state" class="form-select" required>
+          <option value="" disabled selected>Select State...</option>
+          <option value="N/A">N/A</option>
+          <option value="Umuahia">Umuahia</option>
+          <option value="Yola">Yola</option>
+          <option value="Uyo">Uyo</option>
+          <option value="Awka">Awka</option>
+          <option value="Bauchi">Bauchi</option>
+          <option value="Yenagoa">Yenagoa</option>
+          <option value="Makurdi">Makurdi</option>
+          <option value="Maiduguri">Maiduguri</option>
+          <option value="Calabar">Calabar</option>
+          <option value="Asaba">Asaba</option>
+          <option value="Abakaliki">Abakaliki</option>
+          <option value="Benin City">Benin City</option>
+          <option value="Ado-Ekiti">Ado-Ekiti</option>
+          <option value="Enugu">Enugu</option>
+          <option value="Gombe">Gombe</option>
+          <option value="Owerri">Owerri</option>
+          <option value="Dutse">Dutse</option>
+          <option value="Kaduna">Kaduna</option>
+          <option value="Kano">Kano</option>
+          <option value="Katsina">Katsina</option>
+          <option value="Birnin Kebbi">Birnin Kebbi</option>
+          <option value="Lokoja">Lokoja</option>
+          <option value="Ilorin">Ilorin</option>
+          <option value="Ikeja">Ikeja</option>
+          <option value="Lafia">Lafia</option>
+          <option value="Minna">Minna</option>
+          <option value="Abeokuta">Abeokuta</option>
+          <option value="Akure">Akure</option>
+          <option value="Osogbo">Osogbo</option>
+          <option value="Ibadan">Ibadan</option>
+          <option value="Jos">Jos</option>
+          <option value="Port Harcourt">Port Harcourt</option>
+          <option value="Sokoto">Sokoto</option>
+          <option value="Jalingo">Jalingo</option>
+          <option value="Damaturu">Damaturu</option>
+          <option value="Gusau">Gusau</option>
+          <option value="Abuja">Abuja</option>
+          
+          <!-- Additional state options -->
+        </select>
+      </div>
+    
+      <div class="form-group">
+        <label for="message" class="form-label">Wishes / Prayers / Congratulations:</label>
+        <textarea id="message" name="message" placeholder="Your kind words..." rows="5" required class="form-textarea"></textarea>
+      </div>
+
+      <button type="submit" class="form-button">🎉 Submit RSVP</button>
+    </form>
+    
+    <div class="calendar-btn">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Zainab+%26+Toheeb+Nikkah&location=Abeokuta&dates=20250705T080000Z/20250705T100000Z" target="_blank" class="btn">
+        📅 Add to Google Calendar
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>📱Azeezat & Abdulwariz </p> <a href="gratitude.html">Go to Gratitude Page</a>
+  </footer>
+
+  <script src="countdown.js"></script>
+
+</body>
+
+<script>
+  const form = document.getElementById("rsvpForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Stop default submit
+
+    const formData = new FormData(form);
+    const action = "https://formspree.io/f/mvgawqva";
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = "https://olacode01.github.io/nikah-rsvp-site/gratitude.html";
+      } else {
+        alert("Oops! Something went wrong while submitting the form.");
+      }
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  });
+</script>
+
+</html>
