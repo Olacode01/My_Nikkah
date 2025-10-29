@@ -15,7 +15,7 @@ line-height: 1.6;
 
 .banner-header{
 text-align: center;
-color: #0584C7;
+color: #0584C7
 
 }
 
@@ -152,4 +152,27 @@ text-align: center;
 background-color: #0284C7;
 color: white;
 padding: 15px 0;
+}
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.call-btn {
+  background-color: #0369A1; /* light blue */
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.call-btn:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+  transform: translateY(-2px);
 }
